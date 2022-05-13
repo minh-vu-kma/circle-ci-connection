@@ -9,6 +9,8 @@ jobs:
   build:
     docker:
       - image: cimg/base:2020.01
+    environment:
+      $CIRCLE_WORKFLOW_ID: << pipeline.id >>
     steps:
       - checkout
       - run:
